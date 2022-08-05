@@ -1,0 +1,83 @@
+@i@import url('https://fonts.googleapis.com/css2?family=Rajdhani&family=Raleway:wght@300&display=swap');
+
+body {
+    text-align: center;
+    font-family: "Rajdhani", Dosis, Helvetica, sans-serif;
+    background-color: darkgoldenrod;
+}
+
+#play1Name {
+    font-style: italic;
+    background-color: gold;
+}
+
+#play2Name {
+    font-style: italic;
+    background-color: gold;
+}
+
+#submit {
+    background-color: cornflowerblue;
+    color: darkslateblue;
+    text-align: center;
+    font-size: 20px;
+    border: 1px solid gold;
+    height: 55px;
+    width: 100px;
+    margin: 10px;
+    font-family: "Rajdhani", dosis, helvetica, sans-serif;
+}
+
+#tictactitle {
+    font-size: 35px;
+    color:darkslateblue;
+}
+
+h2 {
+    margin: 0 auto;
+    font-size: 20px;
+    margin: 10px;
+    color: darkslateblue;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-column {
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+    height: 432px;
+    width: 432px;
+}
+
+#board {
+    font-family: "Rajdhani", Dosis, Helvetica, sans-serif;
+    font-size: 100px;
+    color: gold;
+}
+
+.square {
+    border: 2px solid cornflowerblue;
+    height: 140px;
+    width: 140px;
+}
+
+#reset-button {
+    background-color: cornflowerblue;
+    color: darkslateblue;
+    text-align: center;
+    font-size: 20px;
+    border: 1px solid gold;
+    height: 55px;
+    width: 100px;
+    margin: 10px;
+    font-family: "Rajdhani", dosis, helvetica, sans-serif;
+}
