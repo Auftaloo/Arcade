@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!--CSS stylesheet-->
+    <link rel="stylesheet" href="style.css">
+
+    <!--JavaScript file-->
+    <script defer src="app.js"></script>
+
+    <title>Tic Tac Toe</title>
+</head>
+
+<body>
+        <h1 id="tictactitle">Tic Tac Toe</h1>
+        
+        <!--Enter player names-->
+        <div id="playerNames">
+            <div id="playerOne">
+                <input id="play1Name" type="text" value="Enter player one name.">
+            </div>
+            <div id="playerTwo">
+                <input id="play2Name" type="text" value="Enter player two name.">
+            </div>
+        </div>
+        <div id="submit-button">
+            <button id="submit">Submit</button>
+        </div>
+
+        <!--Game Instructions-->
+        <h2>It's X's turn!</h2>
+        
+        <!--3x3 grid of boxes-->
+        <div class="flex-container flex-column">
+        <div class="flex-container flex-wrap" id="board">
+            <div class="square" square></div>
+            <div class="square" square></div>
+            <div class="square" square></div>
+            <div class="square" square></div>
+            <div class="square" square></div>
+            <div class="square" square></div>
+            <div class="square" square></div>
+            <div class="square" square></div>
+            <div class="square" square></div>
+        </div>
+
+        <!--Reset Button-->
+        <button id="reset-button">Reset</button>
+        </div>
+</body>
+</html>

@@ -1,7 +1,9 @@
-@i@import url('https://fonts.googleapis.com/css2?family=Rajdhani&family=Raleway:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani&family=Raleway:wght@300&display=swap');
 
 body {
     text-align: center;
+    justify-content: center;
+    align-items: center;
     font-family: "Rajdhani", Dosis, Helvetica, sans-serif;
     background-color: darkgoldenrod;
 }
@@ -9,17 +11,23 @@ body {
 #play1Name {
     font-style: italic;
     background-color: gold;
+    justify-content: center;
+    align-items: center;
 }
 
 #play2Name {
     font-style: italic;
     background-color: gold;
+    justify-content: center;
+    align-items: center;
 }
 
 #submit {
     background-color: cornflowerblue;
     color: darkslateblue;
     text-align: center;
+    justify-content: center;
+    align-items: center;
     font-size: 20px;
     border: 1px solid gold;
     height: 55px;

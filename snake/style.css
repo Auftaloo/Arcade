@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani&family=Raleway:wght@300&family=Sail&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&family=Rajdhani&family=Raleway:wght@300&family=Sail&display=swap');
+
+* {
+  font-family: "Lato", arial, sans-serif;
+  color:darkcyan; 
+}
+
+h1{
+    font-family: "Sail", cursive;
+    font-size: 40px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+  background-color:lightgreen;
+}
+
+main {
+    display:grid;
+    grid-template: repeat(12, 1fr) / repeat(12, 1fr);
+    width: 40rem;
+    height: 40rem;
+    background-color: lightcoral;
+}
+
+.cell {
+    border: 0.5px solid lawngreen;
+    
+}
+
+.cell.apple {
+    background-color: red;
+    border-radius: 50%;
+}
+
+.cell.snake {
+    background-color: greenyellow;
+}
+
+button {
+    border-radius: 0.2rem;
+}
+
+#controls {
+    display: none;
+    grid-template: repeat(3, 1fr)/repeat(3,1fr)
+}
+
+button.up {
+    grid-row: 1/2;
+    grid-column: 2/3;
+}
+
+button.down {
+    grid-row: 3/4;
+    grid-column: 2/3;
+}
+
+button.right {
+    grid-row: 2/3;
+    grid-column: 3/4;
+}
+button.left {
+    grid-row: 2/3;
+    grid-column:1/2;
+}
+
+#scoreStrip {
+    display:none
+}

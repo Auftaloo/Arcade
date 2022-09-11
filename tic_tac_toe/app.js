@@ -1,4 +1,4 @@
-/*-----constants-----*/
+/*-----constants-----*/ 
 const winningCombos = [
     [0, 1, 2],
     [3, 4, 5],
@@ -12,16 +12,36 @@ const winningCombos = [
 
 /*-----app's state (variables)-----*/
 let board;
-let turn = 'X';
 let win;
+let square = document.getElementsByClassName('square');
 
 /*-----cached element references-----*/
-const squares = Array.from(document.querySelectorAll('#board div'));
+const squares = Array.from(document.querySelectorAll('[square]'));
 const messages = document.querySelector('h2');
+const playerOneInput = document.getElementById('play1Name')
+const playerTwoInput = document.getElementById('play2Name')
+const submit = document.getElementById('submit')
+const oText = "O";
+const xText = "X";
+let turn = xText
 
 /*-----event listeners-----*/
-document.getElementById('board').addEventListener('click', handleTurn);
-document.getElementById('reset-button').addEventListener('click', init);
+for (var i = 0; i < square.length; i++) {
+    square[i].addEventListener('click', cellClick);
+}
+document.getElementById('reset-button').addEventListener('click', resetGame);
+
+playerOneInput.addEventListener('click', function(){
+    playerOneInput.value = ''
+})
+playerTwoInput.addEventListener('click', function(){
+    playerTwoInput.value = ''
+})
+submit.addEventListener('click', function(){
+    playerOneInput.style.display = 'none'
+    playerTwoInput.style.display = 'none'
+    submit.style.display = 'none'
+})
 
 /*-----functions-----*/
 function getWinner() {
@@ -31,27 +51,52 @@ function getWinner() {
         });
 
         if (winner) {
-            return winner
+            return winner;
         } else if (board.includes('')) {
-            return null
+            return null;
         } else {
-            return 'T'
+            return 'T';
         }
     };
 
-function handleTurn() {
-    let idx = squares.findIndex (function(square){
-        return square === event.target;
+    function cellClick() {
+        for (let i = 0; i < square.length; i++) {
+        if (square[i].textContent === xText || square[i].textContent === oText) {
+            square[i].removeEventListener('click', cellClick)
+        }
+        handleTurn ();
+    }
+}
+
+function handleTurn(handleClick) {
+    let idx = squares.findIndex (function(box){
+        return box === event.target;
     });
     board[idx] = turn;
-    if (turn === 'X') {
-        turn = 'O'
+    if (turn === xText) {
+        turn = oText
     } else {
-        turn = 'X'
+        turn = xText
     };
     win = getWinner ();
     render();
 };
+
+function resetGame() {
+    init();
+    playerOneInput.style.display = 'flex'
+    playerTwoInput.style.display = 'flex'
+    submit.style.display = 'flex'
+    playerOneInput.value = 'Enter player one name.'
+    playerTwoInput.value = 'Enter player two name.'
+    board;
+    turn = xText;
+    win;
+    square = document.getElementsByClassName('square');
+    for (var i = 0; i < square.length; i++) {
+        square[i].addEventListener('click', cellClick);
+    }
+}
 
 function init() {
     board = [
@@ -66,7 +111,15 @@ function render() {
     board.forEach(function(val, idx){
         squares[idx].textContent = val
     });
-    messages.textContent = win === 'T' ? `It's a tie!` : win ? `${win} wins the game!` : `It's ${turn}'s turn!`;
+    if (win === 'T') {
+        messages.textContent = `It's a tie!`
+    } else if (win === xText) {
+        messages.textContent = `${playerOneInput.value} wins the game!`
+    } else if (win === oText) {
+        messages.textContent = `${playerTwoInput.value} wins the game!`
+    } else {
+        messages.textContent = `It's ${turn}'s turn!`
+    }
 };
 
 init();

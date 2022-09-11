@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@300&display=swap");
+
+* {
+    font-family: "Gemunu Libre", cursive;
+}
+body {
+    background-color:black;
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+h1 {
+    color:chartreuse
+}
+
+p{
+    color:limegreen
+}
+
+ul {
+    padding: 2rem;
+    border: .5rem;
+    border-color: deepskyblue;
+    border-style:dotted;
+}
+
+a {
+    color: yellow;
+}
